@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:behavior_subject_example/domain/entity/auth_state.dart';
 import 'package:behavior_subject_example/domain/entity/profile_entity.dart';
 import 'package:behavior_subject_example/domain/repository/i_auth_repository.dart';
@@ -21,12 +23,19 @@ class ProfileScreen extends StatefulWidget {
 
 class _ProfileScreenState extends State<ProfileScreen> {
   ProfileEntity? profile;
+  late final StreamSubscription<AuthState> _authSubscription;
 
   @override
   void initState() {
     // Подписываемся на stream с состоянием авторизации.
-    widget.authRepository.authState.listen(_listenAuthState);
+    _authSubscription = widget.authRepository.authState.listen(_listenAuthState);
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    _authSubscription.cancel();
+    super.dispose();
   }
 
   /// Функция срабатывает каждый раз, когда меняется состояние авторизации.
