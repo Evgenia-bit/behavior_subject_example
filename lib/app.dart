@@ -4,14 +4,14 @@ import 'package:behavior_subject_example/presentation/profile_screen.dart';
 import 'package:flutter/material.dart';
 
 class App extends StatelessWidget {
-  const App({
-    super.key,
-    required this.authRepository,
-    required this.profileRepository,
-  });
-
   final IAuthRepository authRepository;
   final IProfileRepository profileRepository;
+
+  const App({
+    required this.authRepository,
+    required this.profileRepository,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

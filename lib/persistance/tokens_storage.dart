@@ -1,9 +1,5 @@
+/// Класс для работы с токенами.
 class TokensStorage {
-  Future<void> saveTokens() async {
-    // Имитируем сохранение токенов.
-    return Future.delayed(Duration.zero);
-  }
-
   Future<String?> get accessToken async {
     // Имитируем получение access-токена.
     return null;
@@ -12,6 +8,11 @@ class TokensStorage {
   Future<String?> get refreshToken async {
     // Имитируем получение refresh-токена.
     return null;
+  }
+
+  Future<void> saveTokens() async {
+    // Имитируем сохранение токенов.
+    return Future.delayed(Duration.zero);
   }
 
   Future<void> clear() async {

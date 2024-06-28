@@ -1,3 +1,3 @@
 # behavior_subject_example
 
-A new Flutter project.
+Example of using BehaviorSubject.
