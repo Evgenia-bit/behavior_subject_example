@@ -19,6 +19,28 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+  /// Обработчик нажатия на кнопку "Войти".
+  void _onLoginButtonPressed() {
+    widget.authRepository.logIn().then(
+          (_) => ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text('Вы успешно авторизовались'),
+            ),
+          ),
+        );
+  }
+
+  /// Обработчик нажатия на кнопку "Выйти".
+  void _onLogoutButtonPressed() {
+    widget.authRepository.logOut().then(
+          (_) => ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text('Вы успешно вышли'),
+            ),
+          ),
+        );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,28 +67,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
         ),
       ),
     );
-  }
-
-  /// Обработчик нажатия на кнопку "Войти".
-  void _onLoginButtonPressed() {
-    widget.authRepository.logIn().then(
-          (_) => ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-              content: Text('Вы успешно авторизовались'),
-            ),
-          ),
-        );
-  }
-
-  /// Обработчик нажатия на кнопку "Выйти".
-  void _onLogoutButtonPressed() {
-    widget.authRepository.logOut().then(
-          (_) => ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-              content: Text('Вы успешно вышли'),
-            ),
-          ),
-        );
   }
 }
 
