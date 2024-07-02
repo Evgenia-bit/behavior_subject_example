@@ -87,7 +87,7 @@ class _AuthenticatedStateWidgetState extends State<_AuthenticatedStateWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(16),
       child: FutureBuilder(
         future: widget.profileRepository.fetchProfile(),
         builder: (context, snapshot) {
@@ -141,7 +141,7 @@ class _UnauthenticatedStateWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(16),
       child: Column(
         children: [
           const Expanded(

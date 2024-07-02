@@ -1,3 +1,3 @@
-# behavior_subject_example
+# Behavior Subject Example
 
-Example of using BehaviorSubject.
+Example of authorization using BehaviorSubject.
