@@ -29,8 +29,8 @@ class AuthRepository implements IAuthRepository {
       _authSubject.add(
         token != null ? AuthState.authenticated : AuthState.unauthenticated,
       );
-    } on Exception {
-      _authSubject.add(AuthState.unauthenticated);
+    } on Exception catch (e) {
+      _authSubject.addError(e);
     }
   }
 
